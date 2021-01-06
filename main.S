@@ -52,7 +52,6 @@ _start:
 
 #include "test.S"
 
-
 /************* YOUR ASSEMBLY CODE (END) *****************************/
 
 	tail exit
