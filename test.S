@@ -1,4 +1,4 @@
-//#include "test_frame.h"
+#include "test_frame.h"
 //#include "test_macros_rf.h"
 //#include "test_macros_alu.h"
 
