@@ -1,7 +1,7 @@
 #include "test_frame.h"
 #include "test_macros_rf.h"
 #include "test_macros_alu.h"
-#include "test_macros_mul.h"
+#include "test_macros_mul31.h"
 
 # Main test function, performs all the tests
 PROLOGUE()
