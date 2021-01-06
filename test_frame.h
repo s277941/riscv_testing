@@ -22,23 +22,23 @@ LI_DRAM_ADDR(x7); \
 sw      sp, 0(x7); \
 
 
-#define EPILOGUE()      \
+#define EPILOGUE() \
 LI_DRAM_ADDR(x7); \
-lw      sp, 0(x7); \
-lw      x5, 0(x7); \
-lw      x27, 12(sp); \
-lw      x26, 16(sp); \
-lw      x25, 20(sp); \
-lw      x24, 24(sp); \
-lw      x23, 28(sp); \
-lw      x22, 32(sp); \
-lw      x21, 36(sp); \
-lw      x20, 40(sp); \
-lw      x19, 44(sp); \
-lw      x18, 48(sp); \
-lw      x9, 52(sp); \
-lw      x8, 56(sp); \
-lw      x3, 60(sp); \
-lw      x1, 64(sp); \
-addi    sp, sp, 68; \
-li x10, 0; \
+lw      sp, 0(x7);\
+lw      x5, 0(x7);\
+lw      x27, 12(sp);\
+lw      x26, 16(sp);\
+lw      x25, 20(sp);\
+lw      x24, 24(sp);\
+lw      x23, 28(sp);\
+lw      x22, 32(sp);\
+lw      x21, 36(sp);\
+lw      x20, 40(sp);\
+lw      x19, 44(sp);\
+lw      x18, 48(sp);\
+lw      x9, 52(sp);\
+lw      x8, 56(sp);\
+lw      x3, 60(sp);\
+lw      x1, 64(sp);\
+addi    sp, sp, 68;\
+li x10, 0;\
