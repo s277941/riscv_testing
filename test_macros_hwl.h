@@ -144,3 +144,16 @@ add x5, x5, 1;\
 csrr x9, 0x7C6;\
 end_HW_loopx16: sw x9, 16(x29); \
 endl26:;\
+addi                x1,     x0,     10;\
+addi                x2,     x0,     10;\
+lp.setup            x0,     x1,     nested_1;\
+addi                x1,     x1,     5;\
+lp.setup            x1,     x2,     nested_2;\
+addi                x1,     x1,     7;\
+lp.setup            x1,     x1,     nested_1;\
+addi                x1,     x1,     10;\
+addi                x0,     x0,     0;\
+nested_2:;\
+sw                  x2,     100(x29);\
+nested_1:;\
+sw                  x2,     100(x29);\
