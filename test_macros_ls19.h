@@ -1,5 +1,5 @@
 #define TEST_LOAD_STORE() \
-LI_DRAM_ADDR(x29);\
+li x29, 0x0020108C;\
 xor x1, x1, x1;\
 xor x3, x3, x3;\
 xori x3, x3, -1;\

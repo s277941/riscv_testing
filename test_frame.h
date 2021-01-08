@@ -1,5 +1,5 @@
 #define LI_DRAM_ADDR(reg1) \
-li	reg1, 0x00200000; \
+li	reg1, 0x00201084; \
 
 
 #define PROLOGUE()             \

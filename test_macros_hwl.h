@@ -43,7 +43,7 @@ sw x7, 127(x29); \
 sw x8, 127(x29); \
 HW_loopx0: ; \
 csrr x9, 0x7C2; \
-end_HW_loopx0: sw x9, 3012(x29); \
+end_HW_loopx0: sw x9, 2012(x29); \
 \
 li x2, 10; \
 lp.starti x1, HW_loopx1; \
@@ -52,7 +52,7 @@ lp.count x1, x2; \
 csrr x7, 0x7C4; \
 csrr x8, 0x7C5; \
 nop; \
-sw x7, 3012(x29); \
+sw x7, 2012(x29); \
 sw x8, 1999(x29); \
 HW_loopx1:; \
 csrr x9, 0x7C6; \
@@ -157,3 +157,4 @@ nested_2:;\
 sw                  x2,     100(x29);\
 nested_1:;\
 sw                  x2,     100(x29);\
+
