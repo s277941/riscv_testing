@@ -3,9 +3,9 @@
   li x14, 3;\
   li x9, 0xFFFFFFFF;\
   li x13, 0xFFFFFFFF;\
-  li x15, 0xCCCCCCCCC;\
+  li x15, 0xCCCCCCCC;\
   li x12, 0;\
-  sw x0, 4(x11);\
+  sw x0, 8(x11);\
   .option rvc;\
   c.li x10, 1;\
   c.add x10, x9;\
@@ -41,15 +41,15 @@
   c.addi x8, 1;\
   neveer2:;\
   c.sw x8, 4(x11);\
-  c.lw x12, 4(x11);\
+  c.lw x12, 8(x11);\
   c.sw x12, 4(x11);\
   c.bnez x12, neveer2;\
+  LI_DRAM_ADDR(sp);\
   c.lwsp x2, 0(sp);\
   c.lwsp x12, 0(sp);\
-  LI_DRAM_ADDR(sp);\
   c.swsp x12, 4(sp);\
   c.swsp x2, 4(sp);\
-  c.ebreak;\
+  /*c.ebreak;\*/\
  .option norvc;\
   TEST_J(c.j, 1);\
   TEST_J(c.jal, 0);\
