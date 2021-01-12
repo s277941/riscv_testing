@@ -63,14 +63,14 @@ p.lhu x5,  x29(x31); \
 sw x5, 4(x31); \
 p.lw x5,  x29(x31); \
 sw x5, 4(x31); \
-li x28, 0xFFFFFFFF; \
-li x30, 0x11111111; \
+li x28, 0x00000FFF; \
+li x30, 0x00000111; \
 li x1, 0; \
 li x2, 0; \
 li x31, 0x002010F0; \
 loopld:; \
 	p.adduN x3, x0, x1, 0; \
-        p.lw x5, x2(x3!); \
+        p.lw x5, x2(x31!); \
 	sw x5, 4(x31); \
         sw x3,  4(x31); \
 	beq x2, x28, endld; \
@@ -147,9 +147,11 @@ p.sh x2, x3(x31!); \
 p.sw x2, x3(x31!); \
 li x3, 0x002010FC; \
 li x2, 0x002010FC; \
+li x5, 0x4F0;\
+li x6, 0x30;\
 p.sb x0,  x29(x31); \
 p.sh x0, x4(x31); \
 p.sb x2,  x29(x31); \
 p.sh x2, x4(x31); \
-p.sw x2, x3(x2); \
-p.sw x2, x2(x3); \
+p.sw x2, x5(x2); \
+p.sw x2, x6(x3); \

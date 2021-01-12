@@ -70,14 +70,16 @@ LUI x1, 0xFFFFF; \
 sw x1, 0(x31); \
 LUI x1, 0; \
 sw x1, 0(x31); \
+/*
 la x13, WFI_PPC_1; \
 la x14, WFI_NPC_1; \
-la x15, WFI_NPC_2; \
+la x15, WFI_NPC_2; */\
 ebreak; \
-WFI_PPC_1: ; \
+/*WFI_PPC_1: ; \
 wfi; \
 WFI_NPC_1: addi x14, x13, 1; \
 WFI_NPC_2: addi x15, x13, 2; \
+*/\
 \
 la x13,     before_ill; \
 li x14,     0x84; \
@@ -85,7 +87,7 @@ la x15,     after_ill; \
 nop; \
 before_ill:; \
 after_ill:  nop; \
-wfi; \
+/*wfi;*/ \
 call pippo;\
 call pippo;\
 addi x3, x3, 5;\
