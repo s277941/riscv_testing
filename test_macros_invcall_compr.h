@@ -1,4 +1,4 @@
-#define CALL_INVALID() \
+#define CALL_INVALID_COMPR() \
 LI_DRAM_ADDR(x8);\
 li x31, 0;\
 li x25, 0x00202000;\
@@ -29,14 +29,9 @@ sw x29, 4(x8);\
 li x30, 0xFFFFFFFF;\
 add x1,x1,1;\
 li x2, 4;\
-li x26, 3;\
-csrr x23, 0x342;\
-beq x23, x26, end_ebreak;\
 beq x1,x2, return;\
 mret;\
 end_call:;\
-ebreak;\
-end_ebreak: ;\
 li x28, 0xFFFFFFFF;\
 li x29, 0xFFFFFFFF;\
 csrrw x0, 0x305, x25;\
@@ -47,15 +42,7 @@ slli x10,x10,7;\
 add x20,x20,x10;\
 add x20,x20, 0x67;\
 sw x20, 0(x25);\
-la x23, inv_instr;\
-inv_instr: .word 0xFFFFFFFF;\
-.word 0xFFFF0000;\
-.word 0xFFFFFF36;\
-.word 0xF0F0F077;\
-.word 0x0F0F0F3F;\
-.word 0xFF00FF6B;\
-.word 0x00FF0062;\
-j finish_int;\
+.word 0xFFFFFFFF;\
 sw x28, 4(x8);\
 sw x29, 4(x8);\
 loop2:;\
@@ -66,7 +53,6 @@ li x29, 0x0;\
 sw x28, 4(x8);\
 sw x29, 4(x8);\
 li x30, 0xFFFFFFFF;\
-addi x23, x23, 4;\
-jalr x0, x23, 0;\
+j finish_int;\
 finish_int: la x10, __vector_start;\
 csrw 0x305, x10;\
