@@ -27,6 +27,12 @@
   c.andi x9, 15;\
   c.sw x9, 4(x11);\
   c.li x9, 1;\
+  c.sw x9, 4(x11);\
+  c.lui x9, 15;\
+  c.sw x9, 4(x11);\
+  c.ebreak;\
+  c.nop;\
+  .option rvc;\
   c.xor x9, x13;\
   c.sw x9, 4(x11);\
   c.or x9, x13;\

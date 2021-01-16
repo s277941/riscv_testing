@@ -14,7 +14,6 @@
 * limitations under the License.
 */
 
-
 .section .vectors, "ax"
 .option norvc
 vector_table:
@@ -80,19 +79,18 @@ sw_irq_handler:
 	j handle_unknown
 
 handle_ecall:
-	li x31, 0x00201084
-	sw x31, 12(x31)
+	la a0, ecall_msg
+	jal ra, puts
 	j end_handler
 
 handle_ebreak:
-	li x31, 0x00201084
-	sw x31, 12(x31)
-	//csrw 0x343, x0
+	la a0, ebreak_msg
+	jal ra, puts
 	j end_handler
 
 handle_illegal_insn:
-	li x31, 0x00201084
-	sw x31, 12(x31)
+	la a0, illegal_insn_msg
+	jal ra, puts
 	j end_handler
 
 handle_unknown:

@@ -1,19 +1,3 @@
-/*##############################################################################
-#            _____            _     _              ______ _ _                #
-#           |  __ \          (_)   | |            |  ____(_) |               #
-#           | |__) |___  __ _ _ ___| |_ ___ _ __  | |__   _| | ___           #
-#           |  _  // _ \/ _` | / __| __/ _ \ '__| |  __| | | |/ _ \          #
-#           | | \ \  __/ (_| | \__ \ ||  __/ |    | |    | | |  __/          #
-#           |_|  \_\___|\__, |_|___/\__\___|_|    |_|    |_|_|\___|          #
-#                        __/ |                                               #
-#                       |___/                                                #
-#                                                                            #
-##############################################################################
-# MATS+ algorithm applied to register file. Only 1 data background sufficient
-# due to stuck-at model not including coupling faults.
-# Data backgrounds:
-# 0xffffffff and 0x00000000*/
-
 #define TEST_REG_FILE_DEEP()\
 MARCH_TEST();\
 TEST_REG_FILE_ALU_FULL();\
@@ -292,32 +276,32 @@ LI_DRAM_ADDR(x2);\
 TEST_REG_FILE_LOAD(x1, x2); \
 
 #define TEST_REG_FILE_LOAD(reg1, regBase)\
-lw reg1, 0(regBase); \
+lw reg1, 4(regBase); \
 nop; \
 nop; \
-sw reg1, 4(regBase); \
-nop; \
-nop; \
-nop; \
-lh reg1,0(regBase); \
-nop; \
-sh reg1, 4(regBase); \
-lb reg1, 0(regBase);\
+sw reg1, 8(regBase); \
 nop; \
 nop; \
 nop; \
+lh reg1,4(regBase); \
 nop; \
-sb reg1, 4(regBase); \
+sh reg1, 8(regBase); \
+lb reg1, 4(regBase);\
 nop; \
-lhu reg1,0(regBase); \
 nop; \
 nop; \
-sh reg1, 4(regBase); \
 nop; \
-lbu reg1, 0(regBase);\
+sb reg1, 8(regBase); \
 nop; \
-sb reg1, 4(regBase); \
-li reg1, 0; \
+lhu reg1,4(regBase); \
+nop; \
+nop; \
+sh reg1, 8(regBase); \
+nop; \
+lbu reg1, 4(regBase);\
+nop; \
+sb reg1, 8(regBase); \
+li reg1, 4; \
 nop; \
 nop; \
 p.lw reg1, reg1(regBase); \
@@ -325,6 +309,15 @@ nop; \
 nop; \
 li reg1, 4;\
 p.sw reg1, reg1(regBase); \
+li reg1, 4; \
+nop; \
+nop; \
+p.lw reg1, reg1(regBase!); \
+nop; \
+nop; \
+li reg1, 4;\
+p.sw reg1, reg1(regBase!); \
+
 
 #define LOAD_TEST() \
 LI_DRAM_ADDR(x31);\

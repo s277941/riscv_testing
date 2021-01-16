@@ -1,4 +1,4 @@
-#define TEST_MUL() \
+#define TEST_MUL08() \
 LI_DRAM_ADDR(x31); \
 li  x1, 0x00000000; \
 li  x2, 0x00000000; \

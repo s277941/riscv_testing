@@ -1,4 +1,4 @@
-#define TEST_ALU_DEEP() \
+#define TEST_ALU_DEEP31() \
 LI_DRAM_ADDR(x31);\
 li                  x18,    0xba100958 ;\
 slli                x22,    x18,    28;\

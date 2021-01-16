@@ -87,7 +87,7 @@ la x15,     after_ill; \
 nop; \
 before_ill:; \
 after_ill:  nop; \
-wfi;\
+wfi;*/\
 call pippo;\
 call pippo;\
 addi x3, x3, 5;\
@@ -99,4 +99,4 @@ ret;\
 ret;\
 ret;\
 npippo:;\
-sw x3, 0(x31);\*/
+sw x3, 0(x31);\

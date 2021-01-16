@@ -1,4 +1,4 @@
-#define TEST_ALU_DEEP() \
+#define TEST_ALU_DEEP08() \
 AUIPC x1, 0xFFFFF; \
 AUIPC x1, 0x00000; \
 AUIPC x1, 0x00001; \

@@ -1,4 +1,4 @@
-#define TEST_MUL();\
+#define TEST_MUL31();\
 LI_DRAM_ADDR(x31);\
 li                  x23,    0x52a829c8;\
 li                  x26,    0xca3e1e86;\
