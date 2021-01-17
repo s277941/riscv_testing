@@ -24,6 +24,7 @@
   c.sw x12, 4(x11);\
   c.sub x10, x9;\
   c.sw x10, 4(x11);\
+  .half 0x0000;\
   c.andi x9, 15;\
   c.sw x9, 4(x11);\
   c.li x9, 1;\

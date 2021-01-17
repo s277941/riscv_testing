@@ -113,9 +113,9 @@ num8:	bne x1, x20, num9; \
 	j aluu; \
 num9:	; \
 TEST_FF(1); \
-TEST_CLB(1); \
-TEST_ROR(1); \
-TEST_MANIP(1); \
+TEST_CLB(0xFFFFFFFF); \
+TEST_ROR(0xCCCCCCCC, 0xB6DB6DB6); \
+TEST_MANIP(0xFFFFFFFF); \
 TEST_INSERT(1); \
 TEST_COMPVI(1); \
 TEST_ALU_imm(0xFFFFFFFF, 0x00000000) ; \
@@ -134,7 +134,7 @@ TEST_SHF( p.subuN, 0xB6DB6DB6, 0x00000001); \
 TEST_SHF( p.subuN, 0x55555555, 0x00000001); \
 TEST_SHF( p.adduRN, 0x00000001, 0xFFFFFFFF); \
 TEST_SHF( p.subRN, 0x00000001, 0xFFFFFFFF); \
-TEST_CLIP();\
+TEST_CLIP(0xFFFF, 0xEFFF);\
 
 #define TEST_ALU() \
 p.extractu x3, x1, 31, 0;\
@@ -485,9 +485,9 @@ sw  x3, 8(x31);\
 AND x3,x1,x2;\
 sw  x3, 8(x31);\
 
-#define TEST_CLIP()\
-li x1, 0xFFFF;\
-li x2, 0xEFFF;\
+#define TEST_CLIP(val1, val2)\
+li x1, val1;\
+li x2, val2;\
 p.clip x3, x1, 1;\
 sw x3, 8(x31);\
 p.clip x3, x1, 2;\
@@ -686,7 +686,7 @@ sw x3, 8(x31);\
 #define TEST_MANIP(val) \
 xor x2, x2, x2;\
 li x6, 1;\
-li x1, 0xFFFFFFFF;\
+li x1, val;\
 li x5, 0x000003E0;\
 li x7, 31;\
 manip1:	p.extractr x3, x1, x2;\
@@ -729,7 +729,7 @@ end_cnt:;\
 
 #define TEST_CLB(val);\
 li x6, 1;\
-li x1, 0xFFFFFFFF;\
+li x1, val;\
 clbb:	p.clb x3, x1;\
 	p.cnt x4, x1;\
 	sw  x3, 8(x31);\
@@ -740,11 +740,11 @@ clbb:	p.clb x3, x1;\
 	j clbb;\
 end_clb:;\
 
-#define TEST_ROR(val);\
+#define TEST_ROR(val1, val2);\
 li x6, 31;\
 li x2, 0;\
-li x1, 0xCCCCCCCC;\
-li x4, 0xB6DB6DB6;\
+li x1, val1;\
+li x4, val2;\
 rorr:	p.ror x3, x1, x2;\
 	p.ror x3, x4, x2;\
 	sw  x3, 8(x31);\
