@@ -3844,6 +3844,7 @@ remu x29,x29,x29;\
 sw x29,440(x31);\
 remu x30,x30,x30;\
 sw x30,444(x31);\
+/*
 li x1,0;\
 li x2,0x0F0F0F0F;\
 .option rvc;\
@@ -3853,4 +3854,4 @@ c.ebreak;\
 c.nop
 .option norvc;\
 sw x1,2047(x31);\
-sw x2,2043(x31);\
+sw x2,2043(x31);\*/
