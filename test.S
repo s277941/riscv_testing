@@ -2,6 +2,7 @@
 #include "test_macros_rf.h"
 #include "test_macros_alu08.h"
 #include "test_macros_alu31.h"
+#include "test_macros_alu04.h"
 #include "test_macros_alu_improv.h"
 #include "test_macros_mul08.h"
 #include "test_macros_mul31.h"
@@ -28,6 +29,7 @@ PROLOGUE()
 //TEST_MUL08()
 //TEST_ALU_DEEP31()
 //TEST_ALU_DEEP08()
+TEST_ALU_DEEP04()
 TEST_ALU_IMPROVED()
 //TEST_BRANCH()
 //ecall
