@@ -1,5 +1,6 @@
 #define TEST_ALU_IMPROVED() \
 LI_DRAM_ADDR(x31);\
+/*
 TEST_ALU_imm(0xA5A5A5A5, 0x3C3);\
 TEST_ALU_imm(0xA5A5A5A5, 0x5A5);\
 TEST_ALU_imm(0x3C35A5A5, 0x3C3);\
@@ -66,6 +67,7 @@ li x1, 0x3C3C3C3C;\
 li x2, 0xE38E38E3;\
 TEST_ALU();\
 \
+\
 TEST_CLIP(0xA5A5A5A5, 0x3C3C3C3C);\
 TEST_CLIP(0x3C3C3C3C, 0xA5A5A5A5);\
 \
@@ -80,10 +82,10 @@ TEST_COMPVI();\
 li x3, 0x3C3C3C3C;\
 TEST_COMPVI();\
 \
-TEST_MANIP1();\
+TEST_MANIP1();i*/\
 TEST_MANIP2();\
 \
-li x3, 0xA5A5A5A5;\
+/*li x3, 0xA5A5A5A5;\
 li x1, 0x3C3C3C3C;\
 pv.insert.h x3, x1, 1;\
 sw x3, 8(x31);\
@@ -92,8 +94,7 @@ sw x3, 8(x31);\
 pv.insert.h x1, x3, 1;\
 sw x1, 8(x31);\
 pv.insert.b x1, x3, 1;\
-sw x1, 8(x31);\
-
+sw x1, 8(x31);*/\
 
 
 #define TEST_ROR1();\

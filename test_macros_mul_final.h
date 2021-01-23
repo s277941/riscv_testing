@@ -1,5 +1,6 @@
-#define TEST_MUL31();\
+#define TEST_MUL_FINAL();\
 LI_DRAM_ADDR(x31);\
+/*MUL FROM PYTHON SCRIPT GROUP 31*/\
 li                  x23,    0x52a829c8;\
 li                  x26,    0xca3e1e86;\
 mul                 x24,    x23,    x26;\
@@ -546,9 +547,253 @@ sw                  x17,    4(x31);\
 li                  x10,    0xfed7dae0;\
 pv.sdotsp.sci.b     x9,     x10,    26;\
 sw                  x9,     898(x31);\
+/*MUL FROM GROUP 31*/\
+li                  x9,     0xce10e12f;\
+li                  x13,    0xa3559ed0;\
+mul                 x6,     x9,     x13;\
+sw                  x6,     8(x31);\
+li                  x20,    0xb681c079;\
+li                  x19,    0x14fcc8d1;\
+mul                 x22,    x20,    x19;\
+sw                  x22,    8(x31);\
+li                  x9,     0x64d11710;\
+li                  x27,    0x16a4131f;\
+mul                 x13,    x9,     x27;\
+sw                  x13,    8(x31);\
+li                  x12,    0x5e5e00c;\
+li                  x30,    0xa451913a;\
+mulh                x19,    x12,    x30;\
+sw                  x19,    8(x31);\
+li                  x2,     0x399237f5;\
+li                  x24,    0xfa5d437f;\
+p.mac               x9,     x2,     x24;\
+sw                  x9,     8(x31);\
+li                  x27,    0x38f6f473;\
+li                  x2,     0xb60ea21;\
+p.mac               x7,     x27,    x2;\
+sw                  x7,     8(x31);\
+li                  x3,     0x329f8c78;\
+li                  x10,    0x4fd0efa8;\
+p.mac               x15,    x3,     x10;\
+sw                  x15,    8(x31);\
+li                  x1,     0xdb7997b0;\
+li                  x16,    0x9c235054;\
+p.msu               x26,    x1,     x16;\
+sw                  x26,    8(x31);\
+li                  x23,    0x7aba8893;\
+li                  x8,     0x5226cb59;\
+p.msu               x7,     x23,    x8;\
+sw                  x7,     8(x31);\
+li                  x19,    0xe7b2f985;\
+li                  x20,    0xa49112d4;\
+p.msu               x19,    x19,    x20;\
+sw                  x19,    8(x31);\
+li                  x19,    0x5fb5aa21;\
+li                  x23,    0xd62e85f9;\
+pv.dotusp.h         x12,    x19,    x23;\
+sw                  x12,    8(x31);\
+li                  x6,     0x6b5b932c;\
+li                  x19,    0x5ee1951;\
+pv.dotusp.h         x5,     x6,     x19;\
+sw                  x5,     8(x31);\
+li                  x17,    0xf541bb08;\
+li                  x10,    0xb7321bb0;\
+pv.dotsp.sc.h       x14,    x17,    x10;\
+sw                  x14,    8(x31);\
+li                  x9,     0x3b46bf01;\
+li                  x16,    0x539ea59;\
+pv.dotsp.sc.h       x11,    x9,     x16;\
+sw                  x11,    8(x31);\
+li                  x13,    0x7c1c468e;\
+li                  x16,    0xddba2907;\
+pv.sdotup.h         x4,     x13,    x16;\
+sw                  x4,     8(x31);\
+/*MUL FROM GROUP 8*/\
 TEST_SHF( p.muluN, 0x55555555, 0x00000001); \
 TEST_SHF( p.muluN, 0xCCCCCCCC, 0x00000001); \
 TEST_SHF( p.mulsN, 0x55555555, 0x00000001); \
 TEST_SHF( p.mulsN, 0xCCCCCCCC, 0x00000001); \
 TEST_SHF( p.mulsRN, 0x00000001, 0xFFFFFFFF); \
 TEST_SHF( p.mulhhsRN, 0x00000001, 0xFFFFFFFF); \
+/*MUL FROM GROUP 31*/\
+li x14, 0x03313b61;\
+li x29, 0x79953765;\
+mulh x14, x14, x29;\
+sw x14, 4(x31);\
+li x24, 0x70623de8;\
+li x27, 0xdbb1f3af;\
+mulhu x27, x24, x27;\
+sw x27, 4(x31);\
+li x28, 0x8319a785;\
+li x25, 0x2eecb5e9;\
+mulhu x18, x28, x25;\
+sw x18, 4(x31);\
+li x16, 0xaaac4e21;\
+mulhu x11, x16, x0;\
+sw x11, 4(x31);\
+li x8, 0x1d604cc9;\
+li x23, 0x9e6c485e;\
+mulhsu x17, x8, x23;\
+sw x17, 4(x31);\
+li x3, 0x00000000;\
+li x2, 0x00000001;\
+mul x3, x3, x2;\
+sw x3, 4(x31);\
+li x7, 0x79fca6f4;\
+li x23, 0x7aba8893;\
+li x8, 0x5226cb59;\
+p.msu x7, x23, x8;\
+sw x7, 4(x31);\
+li x30, 0xf3661180;\
+li x23, 0x6a1cef73;\
+p.muls x30, x30, x23;\
+sw x30, 4(x31);\
+li x4, 0x2e240162;\
+li x7, 0x9d6ad627;\
+p.mulhhs x11, x4, x7;\
+sw x11, 4(x31);\
+li x12, 0xe4e88664;\
+li x24, 0xd04a1c00;\
+p.mulhhs x29, x12, x24;\
+sw x29, 4(x31);\
+li x30, 0x4e5e5e38;\
+li x27, 0x705ce624;\
+p.mulhhs x1, x30, x27;\
+sw x1, 4(x31);\
+li x30, 0x8cc0495c;\
+li x4, 0xf9c219b7;\
+p.mulu x26, x30, x4;\
+sw x26, 4(x31);\
+li x30, 0x001046d6;\
+li x8, 0x00000000;\
+p.mulhhsRN x7, x30, x8, 0;\
+sw x7, 4(x31);\
+li x21, 0xffffffbe;\
+li x20, 0x00000000;\
+li x24, 0x0001ffff;\
+p.macsN x24, x21, x20, 6;\
+sw x24, 4(x31);\
+li x4, 0x00000000;\
+li x25, 0x00000000;\
+li x21, 0xffffffbe;\
+p.macsN x21, x4, x25, 10;\
+sw x21, 4(x31);\
+li x16, 0xbe4a298a;\
+li x10, 0x2ccebb34;\
+pv.dotusp.h x8, x16, x10;\
+sw x8, 4(x31);\
+li x24, 0xef288fcf;\
+li x25, 0x13ac13ac;\
+pv.dotusp.sc.h x13, x24, x25;\
+sw x13, 4(x31);\
+li x16, 0x28dfa07a;\
+pv.dotusp.sci.h x13, x16, 1;\
+sw x13, 4(x31);\
+li x12, 0xcdda54d8;\
+pv.dotusp.sci.h x19, x12, 19;\
+sw x19, 4(x31);\
+li x15, 0xac88da03;\
+pv.dotusp.sci.b x21, x15, 1;\
+sw x21, 4(x31);\
+li x18, 0x0188f364;\
+li x13, 0x6af1d1b2;\
+pv.dotsp.h x29, x18, x13;\
+sw x29, 4(x31);\
+li x30, 0xc92ad851;\
+li x16, 0xbf374d33;\
+pv.dotsp.h x27, x30, x16;\
+sw x27, 4(x31);\
+li x12, 0x266b4e62;\
+li x6, 0xf9e2fb8c;\
+pv.dotsp.b x13, x12, x6;\
+sw x13, 4(x31);\
+li x13, 0xaf73c7f4;\
+li x1, 0x2cdf2cdf;\
+pv.dotsp.sc.h x21, x13, x1;\
+sw x21, 4(x31);\
+li x15, 0x640e4fb5;\
+pv.dotsp.sci.h x20, x15, 11;\
+sw x20, 4(x31);\
+li x30, 0x48e9ffec;\
+li x13, 0x78214510;\
+pv.sdotup.h x4, x30, x13;\
+sw x4, 4(x31);\
+li x12, 0xa7ad860c;\
+li x16, 0xa66b98ad;\
+pv.sdotup.h x8, x12, x16;\
+sw x8, 4(x31);\
+li x24, 0x1992550e;\
+li x9, 0xb30db30d;\
+pv.sdotup.sc.h x3, x24, x9;\
+sw x3, 4(x31);\
+li x8, 0x7634f1f9;\
+li x25, 0x679d679d;\
+pv.sdotup.sc.h x21, x8, x25;\
+sw x21, 4(x31);\
+li x7, 0x8ebaf117;\
+pv.sdotup.sci.h x20, x7, 28;\
+sw x20, 4(x31);\
+li x21, 0x59cd6606;\
+li x12, 0xb88d5daa;\
+pv.sdotusp.h x25, x21, x12;\
+sw x25, 4(x31);\
+li x18, 0x6fdca42a;\
+li x4, 0x06e106e1;\
+pv.sdotusp.sc.h x13, x18, x4;\
+sw x13, 4(x31);\
+li x1, 0xe012e0fc;\
+pv.sdotusp.sci.h x11, x1, 11;\
+sw x11, 4(x31);\
+/*MUL FROM GROUP 8*/\
+li x1, 0x11111111;\
+li x2, 0x22222222;\
+p.muls x3, x1, x2;\
+sw x3, 4(x31);\
+li x1, 0x11111111;\
+li x2, 0x44444444;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x1, 0x11111111;\
+li x2, 0xffffffff;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x1, 0x22222222;\
+li x2, 0x22222222;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x1, 0x22222222;\
+li x2, 0x88888888;\
+p.muls x3, x1, x2;\
+sw x3, 4(x31);\
+li x1, 0x22222222;\
+li x2, 0x88888888;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x1, 0x33333333;\
+li x2, 0x44444444;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x1, 0x33333333;\
+li x2, 0x66666666;\
+p.muls x3, x1, x2;\
+sw x3, 4(x31);\
+li x1, 0x33333333;\
+li x2, 0xbbbbbbbb;\
+p.muls x3, x1, x2;\
+sw x3, 4(x31);\
+li x1, 0x33333333;\
+li x2, 0xdddddddd;\
+pv.dotusp.sc.h x11, x1, x2;\
+sw x11, 4(x31);\
+li x3, 0x00000001;\
+li x1, 0xffffffff;\
+li x2, 0x00000000;\
+p.mac x3, x1, x2;\
+sw x3, 4(x31);\
+li x1, 0xffffffff;\
+li x2, 0x00000000;\
+mulhsu x5, x1, x2;\
+sw x5, 4(x31);\
+li x1, 0xffffffff;\
+pv.sdotsp.sci.b x15, x1, 31;\
+sw x15, 4(x31);\

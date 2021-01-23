@@ -168,7 +168,7 @@ sw x5,200(x31);\
 sw x3,208(x31);\
 sw x2,212(x31);\
 sw x1,216(x31);\
-li x1,0xFFFFFFFF;\
+/*li x1,0xFFFFFFFF;\
 li x2,0xF0F0F0F0;\
 li x3,0x00000000;\
 li x4,0x0F0F0F0F;\
@@ -3843,15 +3843,4 @@ sw x28,436(x31);\
 remu x29,x29,x29;\
 sw x29,440(x31);\
 remu x30,x30,x30;\
-sw x30,444(x31);\
-/*
-li x1,0;\
-li x2,0x0F0F0F0F;\
-.option rvc;\
-c.addi x1,10;\
-c.slli x2,12;\
-c.ebreak;\
-c.nop
-.option norvc;\
-sw x1,2047(x31);\
-sw x2,2043(x31);\*/
+sw x30,444(x31);*/\
