@@ -187,17 +187,17 @@ mul                 x3,     x3,     x2;\
 xori                x4,     x4,     -1;\
 slli                x4,     x4,     3;\
 sub                 x4,     x4,     x15;\
-sw                  x1,     0(x0);\
-sw                  x2,     0(x0);\
-sw                  x3,     0(x0);\
-sw                  x4,     0(x0);\
-sw                  x5,     0(x0);\
-sw                  x6,     0(x0);\
-sw                  x7,     0(x0);\
-sw                  x8,     0(x0);\
+sw                  x1,     8(x31);\
+sw                  x2,     8(x31);\
+sw                  x3,     8(x31);\
+sw                  x4,     8(x31);\
+sw                  x5,     8(x31);\
+sw                  x6,     8(x31);\
+sw                  x7,     8(x31);\
+sw                  x8,     8(x31);\
 div_loop:;\
 div                 x1,     x0,     x0;\
-sw                  x1,     0(x0);\
+sw                  x1,     8(x31);\
 li                  x2,     0x73c743f8;\
 p.extract           x22,    x2,     2,      19;\
 sw                  x22,    8(x31);\

@@ -94,19 +94,19 @@ add  x7, x6, x6; \
 add  x8, x6, x6	; \
 add  x9, x6, x6	; \
 add  x10, x4, x6; \
-sw x10, 4(x1); \
-sw x10, 7(x1); \
-sw x10, 11(x1); \
-lw x11, 11(x1); \
-lw x12, 11(x1)	; \
-lw x13, 11(x1)	; \
-sw x13, 12(x1)	; \
+sw x10, 4(x31); \
+sw x10, 7(x31); \
+sw x10, 11(x31); \
+lw x11, 11(x31); \
+lw x12, 11(x31)	; \
+lw x13, 11(x31)	; \
+sw x13, 12(x31)	; \
 add  x14, x6, x6; \
-lw x14, 11(x1)	; \
+lw x14, 11(x31)	; \
 add  x15, x6, x14; \
 add  x16, x6, x14; \
 add  x16, x6, x14; \
-lw x2, 4(x1); \
+lw x2, 4(x31); \
 sw x18, 8(x31); \
 sw x17, 8(x31); \
 sw x6, 8(x31); \
@@ -121,11 +121,11 @@ addi x1, x0, 1; \
 addi x2, x1, 2; \
 addi x3, x2, 9; \
 addi x4, x3, 52; \
-sw x4, 4(x1)	; \
-lw x2, 4(x1); \
-sw x2, 20(x1) ; \
-lw x2, 4(x2); \
-lw x2, 4(x1)	; \
+sw x4, 4(x31)	; \
+lw x2, 4(x31); \
+sw x2, 20(x31) ; \
+lw x2, 4(x31); \
+lw x2, 4(x31)	; \
 addi x5, x2, 10; \
 addi x6, x2, 10; \
 addi x7, x2, 10; \

@@ -54,8 +54,8 @@
   LI_DRAM_ADDR(sp);\
   c.lwsp x2, 0(sp);\
   c.lwsp x12, 0(sp);\
-  c.swsp x12, 4(sp);\
-  c.swsp x2, 4(sp);\
+  c.swsp x12, 228(sp);\
+  c.swsp x2, 228(sp);\
 c.li x5, 0;\
 jmp1: c.j jmp2;\
   c.addi x5, 10;\

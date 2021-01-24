@@ -271,9 +271,9 @@ TEST_REG_FILE_LOAD(x6, regBase); \
 TEST_REG_FILE_LOAD(x5, regBase); \
 TEST_REG_FILE_LOAD(x4, regBase); \
 TEST_REG_FILE_LOAD(x3, regBase); \
-TEST_REG_FILE_LOAD(x2, regBase); \
-LI_DRAM_ADDR(x2);\
-TEST_REG_FILE_LOAD(x1, x2); \
+LI_DRAM_ADDR(x3);\
+TEST_REG_FILE_LOAD(x2, x3); \
+TEST_REG_FILE_LOAD(x1, x3); \
 
 #define TEST_REG_FILE_LOAD(reg1, regBase)\
 lw reg1, 4(regBase); \
@@ -322,5 +322,5 @@ p.sw reg1, reg1(regBase!); \
 #define LOAD_TEST() \
 LI_DRAM_ADDR(x31);\
 TEST_REG_FILE_LOAD_FULL(0xFFFFFFFF, x31); \
-LI_DRAM_ADDR(x1);\
-TEST_REG_FILE_LOAD_FULL_REVERSE(0x00000000, x1); \
+LI_DRAM_ADDR(x2);\
+TEST_REG_FILE_LOAD_FULL_REVERSE(0x00000000, x2); \
